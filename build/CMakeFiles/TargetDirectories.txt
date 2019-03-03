@@ -1,0 +1,7 @@
+/Volumes/disk0s4/project/fileserver/build/CMakeFiles/httpclient.dir
+/Volumes/disk0s4/project/fileserver/build/test/CMakeFiles/test.dir
+/Volumes/disk0s4/project/fileserver/build/CMakeFiles/daemon1.dir
+/Volumes/disk0s4/project/fileserver/build/client/CMakeFiles/fileclient.dir
+/Volumes/disk0s4/project/fileserver/build/CMakeFiles/httpserver.dir
+/Volumes/disk0s4/project/fileserver/build/mergedaemon/CMakeFiles/merge.dir
+/Volumes/disk0s4/project/fileserver/build/httpd/CMakeFiles/http.dir

@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc ../../lib/libhttp.a  CMakeFiles/http.dir/network.c.o CMakeFiles/http.dir/__/common/logger.c.o CMakeFiles/http.dir/event.c.o CMakeFiles/http.dir/http.c.o CMakeFiles/http.dir/__/common/utils.c.o CMakeFiles/http.dir/unicode.c.o CMakeFiles/http.dir/dump.c.o CMakeFiles/http.dir/mergepipe.c.o CMakeFiles/http.dir/__/common/crc32.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib ../../lib/libhttp.a

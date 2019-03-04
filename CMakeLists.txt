@@ -25,9 +25,9 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 
 # Add header file include directories
 include_directories(${PROJECT_SOURCE_DIR}/./ 
-									  ${PROJECT_SOURCE_DIR}/./include   
-										${PROJECT_SOURCE_DIR}/./common
-									  )#????????
+									  ${PROJECT_SOURCE_DIR}/../fastjson   
+										${PROJECT_SOURCE_DIR}/./
+									  )
 
 
 
@@ -45,7 +45,8 @@ include_directories(${PROJECT_SOURCE_DIR}/./
 
 link_directories(
 			    ${PROJECT_SOURCE_DIR}/
-				${PROJECT_SOURCE_DIR}/lib)
+			  	${PROJECT_SOURCE_DIR}/lib
+					)
 										
 #link_libraries("../rtmpdump/lib/librtmp.a")
 #link_libraries("../jrtplib-3.11.1/lib/jrtp.a")
@@ -56,7 +57,11 @@ set (HEADERS
 	)
 
 set(SOURCES
-	${PROJECT_SOURCE_DIR}/main.c
+	${PROJECT_SOURCE_DIR}/main.cpp
+	${PROJECT_SOURCE_DIR}/combination.cpp
+	${PROJECT_SOURCE_DIR}/data.cpp
+	${PROJECT_SOURCE_DIR}/jsonparser.cpp
+	
 	)
 
 
@@ -66,22 +71,11 @@ if (MSVC)
 	set(CMAKE_DEBUG_POSTFIX _d)
 endif ()
 
-add_executable(httpserver ${SOURCES})   #§
+add_executable(httpserver ${SOURCES})   
 
 target_link_libraries(server  
 						${CMAKE_SOURCE_DIR}/
 						libcurl.a 
 						pthread) 
 
-add_executable(httpclient ${CLISOURCES})   #
 
-target_link_libraries(httpclient  
-						${CMAKE_SOURCE_DIR}/lib/libfileclient.a
-						libgumbo.a
-						curl sqlite3 rt z ssl crypto   pthread) 
-
-add_executable(daemon1 ${DAEMONSOURCES})   #
-
-target_link_libraries(daemon1  
-						${CMAKE_SOURCE_DIR}/lib/libmerge.a
-					  pthread) 

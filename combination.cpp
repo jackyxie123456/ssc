@@ -20,6 +20,7 @@
                 Cij(6,3,resulttemp,3,result); 
 *****************************************************************************************************************************/
  #include <vector>
+ #include <iostream>
  
 void Cij(int i, int j,
         std::vector<int> &r,
@@ -54,5 +55,28 @@ void Cij(int i, int j,
                         r[j-2] = k-1;
                         Cij(k - 1, j - 1,r,num,result);
                 }
+        }
+}
+
+
+void  printVector(std::vector<int>&  rVector){
+
+        int i = 0 ;
+        for (i = 0 ; i < rVector.size()  ; i++){
+                std::cout << rVector[i]  << "\t";
+
+        }
+
+        std::cout << std::endl;
+
+}
+
+void printVectors(std::vector< std::vector<int> > & rVectors){
+
+        int i = 0 ;
+        for (i = 0 ; i < rVectors.size()  ; i++){
+                std::vector<int>& rVector = rVectors[i];
+                std::cout << "array " << i << "\t";       
+                printVector(rVector);
         }
 }

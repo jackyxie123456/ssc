@@ -1,5 +1,6 @@
 #include <string>
 #include <curl/curl.h>
+#include <iostream>
 
 
 //回调函数  得到响应内容
@@ -29,15 +30,15 @@ std::string fetchData(std::string url,
 	{
 		curl_easy_setopt(curl, CURLOPT_URL, (char *)url.c_str());           //指定url
 
-        curl_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0); 
-        curl_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0); 
+        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0); 
+        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0); 
 
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);          //绑定相应
-		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)sOut);        //绑定响应内容的地址
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&sOut);        //绑定响应内容的地址
 
 		ret = curl_easy_perform(curl);                          //执行请求
 
-		std::cout << response << std::endl;
+		std::cout << sOut << std::endl;
 
 		curl_easy_cleanup(curl);
 
@@ -50,4 +51,10 @@ std::string fetchData(std::string url,
 	else {
 		return "";
 	}
+}
+
+
+int parseData(std::string strJson ){
+
+    return 0;
 }
